@@ -6,16 +6,24 @@
 import java.util.Scanner;
 
 public class CodigoMenuInteracacoes {
+    private GerenciarReservas gerenciador;
+
+    public CodigoMenuInteracacoes(GerenciarReservas gerenciador) {
+        this.gerenciador = gerenciador;
+    }
+
     public void adicionarQuarto() {
         Scanner scanner = new Scanner(System.in);
-        GerenciarReservas gerenciador = new GerenciarReservas();
 
         System.out.println("Qual o número do quarto que você quer adicionar?");
         int quartoNum = scanner.nextInt();
         System.out.println("Qual o tipo do quarto?");
-        System.out.println("[1] Quarto de Solteiro" +
-                "\n[2] Quarto de Casal" +
-                "\n[3] Suite");
+        System.out.println("""
+                [1] Quarto de Solteiro\
+                
+                [2] Quarto de Casal\
+                
+                [3] Suite""");
         int tipoQuartoEscolha = scanner.nextInt();
         TipoQuarto tipoQuarto = null;
 
@@ -42,4 +50,6 @@ public class CodigoMenuInteracacoes {
         System.out.println("Quarto adicionado com sucesso!");
         gerenciador.adicionarQuarto(new Quarto(quartoNum, tipoQuarto, capacidade, precoDiaria));
     }
-}
+
+
+    }
