@@ -5,7 +5,7 @@ class Hospede_Estadia {
     private String nome;
     private List<Estadia> estadias;
 
-    public Hospede_Estadia(String nome) {
+    public Hospede_Estadia() {
         this.nome = nome;
         this.estadias = new ArrayList<>();
     }
