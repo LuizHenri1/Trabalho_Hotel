@@ -16,6 +16,16 @@ public class GerenciarReservas implements GerenciadorReservas {
         quartos.add(quarto);
     }
 
+    public void visualizarQuartos(){
+        if (quartos.isEmpty()){
+            System.out.println("Não há nenhum quarto disponível");
+        }else {
+            for (Quarto quarto : quartos) {
+                quarto.mostrarQuartos();
+            }
+        }
+    }
+
     @Override
     public Reserva criarReserva(Hospede hospede, int numeroQuarto,
                                 LocalDate dataEntrada, LocalDate dataSaida,
