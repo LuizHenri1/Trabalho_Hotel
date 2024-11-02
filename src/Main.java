@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         GerenciarReservas gerenciador = new GerenciarReservas();
-        CodigoMenuInteracacoes menuInteracacoes = new CodigoMenuInteracacoes();
+        CodigoMenuInteracacoes menuInteracacoes = new CodigoMenuInteracacoes(gerenciador);
         Hospede_Estadia hospedes = new Hospede_Estadia();
         Scanner scanner = new Scanner(System.in);
 
@@ -13,9 +13,9 @@ public class Main {
             boolean menuExecutando = true;
 
             while (menuExecutando) {
-                System.out.println("\n===========================================");
-                System.out.println("       Bem-Vindo ao Sistema de Gerenciamento do HotelXYZ!");
-                System.out.println("===========================================");
+                System.out.println("\n================================================");
+                System.out.println("Bem-Vindo ao Sistema de Gerenciamento do HotelXYZ!");
+                System.out.println("==================================================");
 
                 System.out.println("\n=== Gerenciamento de Quartos ===");
                 System.out.println("[1] Cadastrar novos Quartos");
@@ -51,6 +51,7 @@ public class Main {
                         break;
                     case 2:
                         //Aqui ficará o comando de visualizar quartos disponíveis
+                        gerenciador.visualizarQuartos();
                         break;
                     case 3:
                         // Aqui ficará o comando de atualizar o status dos quartos
